@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;config.properties&apos; to &apos;CabSimulator&apos;" description="Move &apos;config.properties&apos; to &apos;CabSimulator&apos;" destination="/CabSimulator" element1="src/com/cab/config.properties" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1579439173359" updateReferences="true"/>
+</session>

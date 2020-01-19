@@ -1,0 +1,31 @@
+package com.cab;
+
+public class Vehicle extends Thread{
+	private String name;
+	private String vehicle_id;
+	private Point position;
+	private Point[] track;
+	private int status_of_charge;
+	private Point next_position;
+	private String trip_status;
+	private Thread vehicle;
+	
+	Vehicle(String name,String vehicleid,Point pos,int charge,Point next,String status,int track_id){
+		this.name=name;
+		this.vehicle_id=vehicleid;
+		this.position= pos;
+		this.status_of_charge=charge;
+		this.next_position=next;
+		this.trip_status=status;
+		this.track = Track.getMyTrack(track_id);
+		this.vehicle = new Thread();
+		this.vehicle.start();
+	}
+	
+	
+	public void start()
+	{
+		
+	}
+
+}

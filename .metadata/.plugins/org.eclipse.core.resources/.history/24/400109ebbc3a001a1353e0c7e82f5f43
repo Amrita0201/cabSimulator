@@ -1,0 +1,57 @@
+package com.cab;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.FileSystems;
+import java.util.Properties;
+
+public class Vehicle extends Thread{
+	private String name;
+	private String vehicle_id;
+	private Point position;
+	private Point[] track;
+	private int status_of_charge;
+	private Point next_position;
+	private String trip_status;
+	private Thread vehicle;
+	
+	Vehicle(String name,String vehicleid,Point pos,int charge,Point next,String status,int track_id){
+		this.name=name;
+		this.vehicle_id=vehicleid;
+		this.position= pos;
+		this.status_of_charge=charge;
+		this.next_position=next;
+		this.trip_status=status;
+		this.track = Track.getMyTrack(track_id);
+		this.vehicle = new Thread();
+		this.vehicle.start();
+	}
+	
+	public void run() {
+		System.out.print("started running");
+	}
+	public void start()
+	{
+		//String path_to_config_file=FileSystems.getDefault().getPath("config.properties").toAbsolutePath().toString();
+		try(InputStream input=new FileInputStream("config.properties")){
+			
+			Properties prop=new Properties();
+			prop.load(input);
+			System.out.print(prop.getProperty("start"));
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+
+}

@@ -1,0 +1,10 @@
+package com.cab;
+
+public class CabSystem {
+
+	public static void main(String[] args)
+	{
+		Vehicle v1 = new Vehicle("test", "1234", new Point(1,2), 100,new Point(3,4), "start", 1);
+		v1.start();
+	}
+}
