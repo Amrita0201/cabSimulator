@@ -4,7 +4,7 @@ public class CabSystem {
 
 	public static void main(String[] args)
 	{
-		Vehicle v1 = new Vehicle("test", "1234", new Point(1,2), 100,new Point(3,4), "start", 1);
+		Vehicle v1 = new Vehicle(1,"vehicle.json");
 		v1.start();
 	}
 }
