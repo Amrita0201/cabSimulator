@@ -1,5 +1,8 @@
 package com.cab;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Track {
 	private static Point[][] tracks= {
 			{new Point(2,1),new Point(3,2),new Point(4,3), new Point(5,3)},
@@ -8,8 +11,12 @@ public class Track {
 			{new Point(3,1),new Point(3,7),new Point(5,3), new Point(8,3)}
 			};
 	
-	public static Point[] getMyTrack(int index) {
-		return tracks[index];
+	public static Point[] getMyTrack(Point p) {
+		for(int i = 0;i<4;i++){
+			if(Arrays.asList(tracks[i]).indexOf(p) > -1)
+				return tracks[i];
+		}
+		return tracks[0];
 	}
 
 }

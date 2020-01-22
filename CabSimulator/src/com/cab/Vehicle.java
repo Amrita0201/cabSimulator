@@ -41,7 +41,7 @@ public class Vehicle extends Thread{
 			JSONObject heading = (JSONObject) ((JSONObject)jo.get("attributes")).get("heading");
 			this.next_position=new Point(Integer.parseInt(heading.get("latitude").toString()),Integer.parseInt(heading.get("longitude").toString()));
 			this.trip_status=((JSONObject)jo.get("attributes")).get("trip_status").toString();
-			this.track = Track.getMyTrack(track_id);
+			this.track = Track.getMyTrack(this.position);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
